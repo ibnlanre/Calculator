@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" async defer></script>
+  <title>Calculator</title>
+</head>
+<body>
+  <section class="container background">
+    <section class="display glass">
+      <div><p id="space"> </p><p id="sym"> </p></div>
+      <p id="floor">0</p>
+    </section>
+    <section class="controls">
+      <button onclick="insert('(')">(</button>
+      <button onclick="insert(')')">)</button>
+      <button onclick="cls(true)">CE</button>
+      <button onclick="cls()">C</button>
+      <button onclick="sign('÷')">÷</button>
+      <button onclick="sign('1/x', true)"><sup>1</sup>/x</button>
+      <button onclick="insert(7)">7</button>
+      <button onclick="insert(8)">8</button>
+      <button onclick="insert(9)">9</button>
+      <button onclick="sign('×')">×</button>
+      <button onclick="sign('%', true)">%</button>
+      <button onclick="insert(4)">4</button>
+      <button onclick="insert(5)">5</button>
+      <button onclick="insert(6)">6</button>
+      <button onclick="sign('-')">-</button>
+      <button onclick="sign('^2')">x<sup>2</sup></button>
+      <button onclick="insert(1)">1</button>
+      <button onclick="insert(2)">2</button>
+      <button onclick="insert(3)">3</button>
+      <button onclick="sign('+')">+</button>
+      <button onclick="sign('√', true)">√</button>
+      <button onclick="sign('±', true)">±</button>
+      <button onclick="insert(0)">0</button>
+      <button onclick="insert('0.')">.</button>
+      <button onclick="sign('=')">=</button>      
+    </section>
+  </section>
+</body>
+</html>

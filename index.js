@@ -24,6 +24,13 @@ const change = (fn) => {
   }
 };
 
+function trunc(decimal, n = 8) {
+  let x = decimal + "";
+  return x.lastIndexOf(".") >= 0
+    ? parseFloat(x.substr(0, x.lastIndexOf(".") + (n + 1)))
+    : decimal;
+}
+
 function sign(fn, use) {
   const last = space.innerText;
   const factor = sym.innerText;
@@ -58,7 +65,7 @@ function sign(fn, use) {
       }
     } else {
       if (last && factor) {
-        space.innerText = eval(last + change(factor) + next);
+        space.innerText = trunc(eval(last + change(factor) + next));
       } else {
         space.innerText += next;
       }
@@ -77,7 +84,7 @@ function sign(fn, use) {
         factor && factor !== "=" ? last + change(factor) + value : value;
       floor.innerText = !+next
         ? err || 0
-        : eval(value.replace("√", "Math.sqrt"));
+        : trunc(eval(value.replace("√", "Math.sqrt")))
       sym.innerText = "=";
     }
   } catch (err) {

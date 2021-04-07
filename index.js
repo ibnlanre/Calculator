@@ -80,12 +80,16 @@ function sign(fn, use) {
       else if (floor.innerText || fn == "=") noUse();
     } else {
       let [value, err] = check();
-      space.innerText =
-        factor && factor !== "=" ? last + change(factor) + value : value;
-      floor.innerText = !+next
-        ? err || 0
-        : trunc(eval(value.replace("√", "Math.sqrt")))
-      sym.innerText = "=";
+      if ((fn = "±")) {
+        floor.innerText = value;
+      } else {
+        space.innerText =
+          factor && factor !== "=" ? last + change(factor) + value : value;
+        floor.innerText = !+next
+          ? err || 0
+          : trunc(eval(value.replace("√", "Math.sqrt")));
+        sym.innerText = "=";
+      }
     }
   } catch (err) {
     console.log(err);

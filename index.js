@@ -80,7 +80,7 @@ function sign(fn, use) {
       else if (floor.innerText || fn == "=") noUse();
     } else {
       let [value, err] = check();
-      if ((fn = "±")) {
+      if (fn == "±") {
         floor.innerText = value;
       } else {
         space.innerText =

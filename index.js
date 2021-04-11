@@ -3,8 +3,10 @@ const floor = document.getElementById("floor");
 const sym = document.getElementById("sym");
 
 function insert(value) {
-  if (floor.innerText == "0") floor.innerText = value;
-  else floor.innerText += value;
+  if (floor.innerText == "0") {
+    if (value === ".") floor.innerText = "0.";
+    else floor.innerText = value;
+  } else floor.innerText += value;
 }
 
 const change = (fn) => {
